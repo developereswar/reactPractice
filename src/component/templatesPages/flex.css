@@ -1,0 +1,13 @@
+/* .appMain{display: flex; background: red;} */
+.flex-container {
+  display: flex;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+    flex-direction:  column;
+    background: #efefef;
+}
