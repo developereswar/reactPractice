@@ -2,7 +2,7 @@ var express = require('express');
 const bodyParser = require('body-parser');
 var app = express();
 // var file = require('fs'); 
-const path = require('path');
+var serveStatic = require('serve-static');
 //Db connection
 var mongoose = require("mongoose");
 
@@ -23,12 +23,8 @@ app.use(function(req, res, next) {
     next();
   });
 //Api routes
-// app.use(favicon(__dirname + '/build/favicon.ico'));
-// the __dirname is the current directory from where the script is running
-app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, 'build')));
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+
+
+app.use(serveStatic(__dirname + "/build"));
 
 app.use('/api/expenses', expCtr)
