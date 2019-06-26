@@ -32,5 +32,3 @@ app.get('/*', function (req, res) {
 });
 
 app.use('/api/expenses', expCtr)
-
-
